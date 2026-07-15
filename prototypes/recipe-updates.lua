@@ -26,17 +26,17 @@ function change_to_category(item)
     for _, recipe in pairs(data.raw["recipe"]) do
         if recipe.results then
             -- Ignore hidden, recycling, or explicitly opted-out recipes
-            if recipe.hidden or (recipe.category and string.find(recipe.category, "recycling")) or recipe.castra_prime_ignore then
+            if recipe.hidden or (recipe.categories and recipe.categories["recycling"]) or recipe.castra_prime_ignore then
                 goto continueRecipe
             end
             for _, result in pairs(recipe.results) do
                 if result.name == item.name then
-                    if not recipe.category or recipe.category == "crafting" then
-                        recipe.category = "castra-crafting"
+                    if not recipe.categories or recipe.categories["crafting"] then
+                        recipe.categories = {"castra-crafting"}
                         break
-                    elseif string.sub(recipe.category, 1, 7) ~= "castra-" then
-                        create_category_if_not_exists("castra-" .. recipe.category)
-                        recipe.category = "castra-" .. recipe.category
+                    elseif string.sub(recipe.categories[1], 1, 7) ~= "castra-" then
+                        create_category_if_not_exists("castra-" .. recipe.categories[1])
+                        recipe.categories[1] = "castra-" .. recipe.categories[1]
                         break
                     else
                         break
@@ -107,7 +107,7 @@ if settings.startup["castra-prime-buffed-forge"].value then
     end
 end
 
-change_to_category(data.raw["tool"]["military-science-pack"])
+change_to_category(data.raw["item"]["military-science-pack"])
 
 -- Update the character's crafting categories
 if data.raw.character.character.crafting_categories then

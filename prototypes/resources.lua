@@ -101,7 +101,7 @@ data:extend({
           name = "hydrogen-sulfide",
           amount_min = 1,
           amount_max = 1,
-          probability = 1
+          independent_probability = 1
         }
       }
     },
