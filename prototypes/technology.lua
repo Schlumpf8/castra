@@ -50,7 +50,7 @@
       research_trigger =
       {
         type = "mine-entity",
-        entity = "millerite"
+        entities = {"millerite"}
       },
       effects =
       {
@@ -89,7 +89,7 @@
       research_trigger =
       {
         type = "mine-entity",
-        entity = "hydrogen-sulfide-vent"
+        entities = {"hydrogen-sulfide-vent"}
       },
       effects =
       {
@@ -120,7 +120,7 @@
       research_trigger =
       {
         type = "mine-entity",
-        entity = "gunpowder"
+        entities = {"gunpowder"}
       },
       effects =
       {

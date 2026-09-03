@@ -1,8 +1,8 @@
-﻿require("__base__.prototypes.entity.assemblerpipes")
+﻿require("__base__.prototypes.entity.assembler-pictures")
 require("__base__.prototypes.entity.pipecovers")
 require("__base__.prototypes.entity.biter-animations")
 
-local pipe_pic = assembler3pipepictures()
+local pipe_pic = assembler3pipepictures
 local pipecoverpic = pipecoverspictures()
 
 local box48 = { { -2.4, -2.4 }, { 2.4, 2.4 } }
@@ -35,10 +35,12 @@ local function createDataCollectorSpawn(item_name, icon)
         },
         loot = {
             {
+                type = "item",
                 item = item_name,
-                probability = 1,
-                count_min = 1,
-                count_max = 1
+                name = item_name,
+                independent_probability = 1,
+                amount_min = 1,
+                amount_max = 1
             }
         },
         flags = { "placeable-player", "placeable-enemy", "placeable-off-grid", "not-repairable", "breaths-air" },
@@ -310,34 +312,44 @@ data:extend({
         end)(),
         loot = {
             {
+                type = "item",
                 item = "advanced-circuit",
-                probability = 1,
-                count_min = 5,
-                count_max = 10
+                name = "advanced-circuit",
+                independent_probability = 1,
+                amount_min = 5,
+                amount_max = 10
             },
             {
+                type = "item",
                 item = "nickel-plate",
-                probability = 1,
-                count_min = 6,
-                count_max = 20
+                name = "advanced-circuit",
+                independent_probability = 1,
+                amount_min = 6,
+                amount_max = 20
             },
             {
+                type = "item",
                 item = "electronic-circuit",
-                probability = 1,
-                count_min = 10,
-                count_max = 30
+                name = "electronic-circuit",
+                independent_probability = 1,
+                amount_min = 10,
+                amount_max = 30
             },
             {
+                type = "item",
                 item = "low-density-structure",
-                probability = 1,
-                count_min = 5,
-                count_max = 12
+                name = "low-density-structure",
+                independent_probability = 1,
+                amount_min = 5,
+                amount_max = 12
             },
             {
+                type = "item",
                 item = "electric-engine-unit",
-                probability = 1,
-                count_min = 3,
-                count_max = 8
+                name = "electric-engine-unit",
+                independent_probability = 1,
+                amount_min = 3,
+                amount_max = 8
             }
         }
     },
@@ -456,7 +468,7 @@ data:extend({
                 tint = { r = 0.5, g = 0.1, b = 0.5, a = 0.3 }
             }
         },
-        flags = { "placeable-neutral", "placeable-player", "player-creation", "not-repairable", "not-deconstructable" },
+        flags = { "placeable-neutral", "placeable-player", "player-creation", "not-repairable", "not-deconstructable", "no-logistic-connection" },
         max_health = 12000,
         create_ghost_on_death = false,
         show_recipe_icon = false,
@@ -592,7 +604,6 @@ data:extend({
         module_slots = 4,
         allowed_effects = { "quality" },
         allowed_module_categories = { "quality" },
-        enable_logistic_control_behavior = false,
         surface_conditions =
         {
             {
