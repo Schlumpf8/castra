@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.1
+Date: 2026-09-05
+  Bugfixes:
+    - Fix for loading crash conflict with Vesta mod
+
+---------------------------------------------------------------------------------------------------
+Version: 0.9.0
+Date: 2026-09-03
+  Migration to 2.1, thanks to LeifOlsson
+  
+---------------------------------------------------------------------------------------------------
 Version: 0.8.3
 Date: 2026-06-28
   Bugfixes:
@@ -11,6 +22,8 @@ Date: 2026-06-28
       which ammo items count toward enemy turret tiers. Intended for mods that replace vanilla
       ammo entirely, where enemy turrets would otherwise never find ammo to load. Thanks to
       timzyxel for the contribution (PR #3).
+
+
 
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.2

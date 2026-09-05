@@ -2,7 +2,7 @@
 require("__base__.prototypes.entity.pipecovers")
 require("__base__.prototypes.entity.biter-animations")
 
-local pipe_pic = assembler3pipepictures
+local pipe_pic = require("__base__.prototypes.entity.assembler-pictures").assembler3pipepictures
 local pipecoverpic = pipecoverspictures()
 
 local box48 = { { -2.4, -2.4 }, { 2.4, 2.4 } }
